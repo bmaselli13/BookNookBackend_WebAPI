@@ -62,5 +62,7 @@ namespace FullStackAuth_WebAPI.Controllers
 
             return Ok(new { access = await _authManager.CreateToken() });
         }
+
+        // Testing
     }
 }

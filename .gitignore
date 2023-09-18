@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Specific file to ignore
+FullStackAuth_WebAPI/appsettings.json

@@ -9,7 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using System.Drawing.Text;
+using System.Linq.Expressions;
 using System.Net;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 
 namespace BookNookBackend.Controllers
@@ -33,36 +35,47 @@ namespace BookNookBackend.Controllers
         {
             try
             {
+                //var result = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new BookDetailsDto
+                //{
 
-                var reviews = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new ReviewWithUserDto
+
+                //}).FirstOrDefault();
+
+                // Get all the Reviews
+                var reviews = _context.Reviews.Where(r => r.BookId == bookId).ToList();
+
+                // Construct Book Details DTO
+                var bookDetails = new BookDetailsDto
                 {
-                    Id = r.Id,
-                    BookId = r.BookId,
-                    Text = r.Text,
-                    User = new UserForDisplayDto
+                    Reviews = reviews.Select(r => new ReviewWithUserDto
                     {
-                        Id = r.User.Id,
-                        FirstName = r.User.FirstName,
-                        LastName = r.User.LastName,
-                        UserName = r.User.UserName,
-                    }
-                }).ToList();
+                        Id = r.Id,
+                        BookId = r.BookId,
+                        Text = r.Text,
+                        User = new UserForDisplayDto
+                        {
+                            Id = r.User.Id,
+                            FirstName = r.User.FirstName,
+                            LastName = r.User.LastName,
+                            UserName = r.User.UserName,
+                        }
 
-                return Ok(reviews);
+                    }).ToList(),
+                    AverageRating = 0,
+                    IsFavorited = true
+                };
+                return Ok(bookDetails);
+            }
+            catch (Exception ex) { return StatusCode(500, ex.Message); };
+        }
+            
 
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
+        }
+    }
+
+    
+
+
 
            
-        }
-
-
-
-
-
-    }
-}
 

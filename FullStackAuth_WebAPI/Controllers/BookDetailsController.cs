@@ -2,6 +2,7 @@
 using BookNookBackend.DataTransferObjects;
 using BookNookBackend.Models;
 using FullStackAuth_WebAPI.Data;
+using FullStackAuth_WebAPI.DataTransferObjects;
 using FullStackAuth_WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -30,12 +31,28 @@ namespace BookNookBackend.Controllers
             [HttpGet("{bookId}")]
             public IActionResult GetAllReviews(string bookId)
             {
+            //var reviews = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new ReviewWithUserDto
+            //{
+            // User = r.User.UserName,
+            // Rating = r.Rating,
+            // Review = r.
+            //} )                                                
+
+
             var reviews = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new ReviewWithUserDto
             {
-             User = r.User.UserName,
-             Rating = r.Rating,
-             Review = r.
-            } )                                                
+                Id = r.Id,
+                BookId = r.BookId,
+                Text = r.Text,
+                Rating = r.Rating,
+                User = new UserForDisplayDto
+                {
+                    Id = r.User.Id,
+                    FirstName = r.User.FirstName,
+                    LastName = r.User.LastName,
+                    UserName = r.User.UserName,
+                }
+            }).ToList();
 
             int x = 0;
 

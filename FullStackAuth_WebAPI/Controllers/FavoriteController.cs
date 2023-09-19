@@ -1,4 +1,5 @@
-﻿using FullStackAuth_WebAPI.Data;
+﻿using BookNookBackend.Models;
+using FullStackAuth_WebAPI.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,5 +35,36 @@ namespace BookNookBackend.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        // Post: api/favorite/
+        [HttpPost, Authorize]
+        public IActionResult Post([FromBody] Favorite favorite)
+        {
+            try
+            {
+                string userId = User.FindFirstValue("id");
+
+                if (string.IsNullOrEmpty(userId))
+                    return Unauthorized();
+
+                favorite.UserId = userId;
+
+                _context.Favorites.Add(favorite);
+
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                _context.SaveChanges();
+
+                return StatusCode(201, favorite);
+            }
+
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
+        
     }
 }

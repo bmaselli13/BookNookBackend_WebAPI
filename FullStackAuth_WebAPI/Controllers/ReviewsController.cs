@@ -28,33 +28,26 @@ namespace BookNookBackend.Controllers
         {
             try
             {
-                // Retrieve the authenticated user's ID from the JWT token
                 string userId = User.FindFirstValue("id");
 
-                // If the user ID is null or empty, the user is not authenticated, so return a 401 unauthorized response
                 if (string.IsNullOrEmpty(userId))
                 {
                     return Unauthorized();
                 }
 
-                // Set the car's owner ID  the authenticated user's ID we found earlier
                 review.UserId = userId;
 
-                // Add the car to the database and save changes
                 _context.Reviews.Add(review);
                 if (!ModelState.IsValid)
                 {
-                    // If the car model state is invalid, return a 400 bad request response with the model state errors
                     return BadRequest(ModelState);
                 }
                 _context.SaveChanges();
 
-                // Return the newly created car as a 201 created response
                 return StatusCode(201, review);
             }
             catch (Exception ex)
             {
-                // If an error occurs, return a 500 internal server error with the error message
                 return StatusCode(500, ex.Message);
             }
         }

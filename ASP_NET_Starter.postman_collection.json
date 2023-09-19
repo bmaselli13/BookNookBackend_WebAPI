@@ -211,7 +211,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\": \"John\",\r\n    \"lastname\": \"Smith\",\r\n    \"username\": \"johnsmith\",\r\n    \"password\": \"password!@#123\",\r\n    \"email\": \"john@gmail.com\"\r\n}\r\n// {\r\n//     \"firstname\": \"John\",\r\n//     \"lastname\": \"Smith\",\r\n//     \"username\": \"johnsmith\",\r\n//     \"password\": \"password!@#123\",\r\n//     \"email\": \"john@gmail.com\"\r\n// }",
+							"raw": "{\r\n    \"firstname\": \"Bob\",\r\n    \"lastname\": \"Lanister\",\r\n    \"username\": \"boblanister\",\r\n    \"password\": \"password!@#123\",\r\n    \"email\": \"bob@gmail.com\"\r\n}\r\n// {\r\n//     \"firstname\": \"John\",\r\n//     \"lastname\": \"Smith\",\r\n//     \"username\": \"johnsmith\",\r\n//     \"password\": \"password!@#123\",\r\n//     \"email\": \"john@gmail.com\"\r\n// }\r\n\r\n// {\r\n//     {\r\n//     \"firstname\": \"John\",\r\n//     \"lastname\": \"Smith\",\r\n//     \"username\": \"johnsmith\",\r\n//     \"password\": \"password!@#123\",\r\n//     \"email\": \"john@gmail.com\"\r\n// }\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -240,7 +240,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"johnsmith\",\r\n    \"password\": \"password!@#123\"\r\n}\r\n\r\n// {\r\n//     \"userName\": \"nikober\",\r\n//     \"password\": \"password!@#123\"\r\n// }",
+							"raw": "{\r\n    \"userName\": \"boblanister\",\r\n    \"password\": \"password!@#123\"\r\n}\r\n\r\n// {\r\n//     \"userName\": \"nikober\",\r\n//     \"password\": \"password!@#123\"\r\n// }\r\n\r\n// {\r\n//     \"userName\": \"johnsmith\",\r\n//     \"password\": \"password!@#123\"\r\n// }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -275,7 +275,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMDgwMzMsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.tkHoXk1P8sDNuwvUlXFNmUGiJyT78cdzfB4zS7jMZr0",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImpvaG5zbWl0aCIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJpZCI6ImFmMGQ2OTZjLWNlYzctNGQ3Mi1hNTljLThmODVkZDkxZjJkMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMTcwODIsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.9-71KPOfaxe7PH4Ddw3JlV7mNsg3Tq3kusNJPTV-VGE",
 								"type": "text"
 							}
 						],
@@ -307,7 +307,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMDgwMzMsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.tkHoXk1P8sDNuwvUlXFNmUGiJyT78cdzfB4zS7jMZr0",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImpvaG5zbWl0aCIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJpZCI6ImFmMGQ2OTZjLWNlYzctNGQ3Mi1hNTljLThmODVkZDkxZjJkMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMTcwODIsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.9-71KPOfaxe7PH4Ddw3JlV7mNsg3Tq3kusNJPTV-VGE",
 								"type": "text"
 							}
 						],
@@ -374,7 +374,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImpvaG5zbWl0aCIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJpZCI6ImFmMGQ2OTZjLWNlYzctNGQ3Mi1hNTljLThmODVkZDkxZjJkMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMTQ4NzksImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.-bO1urtRqaAEr7HRuJ7sc911S95JigTD8qmsO9DUpgA",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImJvYmxhbmlzdGVyIiwiZW1haWwiOiJib2JAZ21haWwuY29tIiwiaWQiOiI5OGU0ODY1MC02YzBjLTRmZDUtOWUxNy1mMjQ0YjkyYTYyOGIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1MjE2ODUwLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.5WiwimkRg5CNx5fTx_hsE6ruWkWk2hlNTzPL1GoEB-k",
 								"type": "text"
 							}
 						],

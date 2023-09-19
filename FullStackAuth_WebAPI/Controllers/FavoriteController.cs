@@ -65,6 +65,16 @@ namespace BookNookBackend.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        //[HttpDelete("{favoriteid}"), Authorize]
+        //public IActionResult Deletefavorite(int favoriteid)
+        //{
+        //    var review = _context.Reviews.FirstOrDefault(r => r.Id == favoriteid);
+        //    if (review is null)
+        //        return NotFound();
+
+        //    var userId = User.FindFirstValue("id");
+        //}
         
     }
 }

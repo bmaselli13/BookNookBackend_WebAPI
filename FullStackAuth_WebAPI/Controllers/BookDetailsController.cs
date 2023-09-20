@@ -29,23 +29,14 @@ namespace BookNookBackend.Controllers
             _context = context;
         }
 
-       
-
         // GET: api/cars/myFavorites
         [HttpGet("{bookId}")]
         public IActionResult GetAllReviews(string bookId)
         {
             try
             {
-                //var result = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new BookDetailsDto
-                //{
-
-                //}).FirstOrDefault();
-
-                // Get all the Reviews
                 var reviews = _context.Reviews.Include(r => r.User).Where(r => r.BookId == bookId).ToList();
 
-                // Construct Book Details DTO
                 var bookDetails = new BookDetailsDto
                 {
                     Reviews = reviews.Select(r => new ReviewWithUserDto
@@ -74,12 +65,14 @@ namespace BookNookBackend.Controllers
                 return StatusCode(500, ex.Message);
             };
         }
-
-
     }
 }
 
+// For my memories
+//var result = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new BookDetailsDto
+//{
 
+//}).FirstOrDefault();
 
 
 

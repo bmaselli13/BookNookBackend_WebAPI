@@ -18,7 +18,7 @@ namespace BookNookBackend.Controllers
             _context = context;
         }
 
-        // GET: api/cars/myFavorites
+        // GET: api/favorite/myFavorites
         [HttpGet("myFavorite"), Authorize]
         public IActionResult GetAllReviews()
         {
@@ -67,30 +67,29 @@ namespace BookNookBackend.Controllers
         }
 
 
-        // doesn't work probably we need to remove from user that its his favorite not just delete vaforite
-        //[HttpDelete("{favoriteid}"), Authorize]
-        //public IActionResult Deletefavorite(int favoriteid)
-        //{
-        //    try
-        //    {
-        //        var review = _context.Reviews.FirstOrDefault(r => r.Id == favoriteid);
-        //        if (review is null)
-        //            return NotFound();
+        [HttpDelete("{favoriteid}"), Authorize]
+        public IActionResult Deletefavorite(int favoriteid)
+        {
+            try
+            {
+                var favorite = _context.Favorites.FirstOrDefault(r => r.Id == favoriteid);
+                if (favorite is null)
+                    return NotFound();
 
-        //        var userId = User.FindFirstValue("id");
-        //        if (string.IsNullOrEmpty(userId) || review.UserId != userId)
-        //            return Unauthorized();
+                var userId = User.FindFirstValue("id");
+                if (string.IsNullOrEmpty(userId) || favorite.UserId != userId)
+                    return Unauthorized();
 
-        //        _context.Reviews.Remove(review);
-        //        _context.SaveChanges();
+                _context.Favorites.Remove(favorite);
+                _context.SaveChanges();
 
-        //        return StatusCode(204);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, ex.Message);
-        //    }
-        //}
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
     }
 }

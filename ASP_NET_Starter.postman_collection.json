@@ -361,6 +361,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Favorite",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyNjQ4NTcsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.DUVW962igm51YkbNkbV_4c4q78di4QUqdbBtq7zWcSM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/Favorite/12",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Favorite",
+								"12"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -398,6 +425,76 @@
 								"api",
 								"Reviews",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyNjQ4NTcsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.DUVW962igm51YkbNkbV_4c4q78di4QUqdbBtq7zWcSM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5001/api/Reviews/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Reviews",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an existing review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyNjQ4NTcsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.DUVW962igm51YkbNkbV_4c4q78di4QUqdbBtq7zWcSM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": \"LznfzAEACAAJ\",\r\n    \"text\": \"Updated My favorite Book\",\r\n    \"rating\": 4\r\n}\r\n\r\n// could bot finish because said i need to pass in at 11-00 am",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Reviews/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Reviews",
+								"3"
 							]
 						}
 					},

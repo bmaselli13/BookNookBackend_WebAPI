@@ -28,7 +28,7 @@ namespace BookNookBackend.Controllers
             _context = context;
         }
 
-        // THIS MEHTOD DOES NOT WORK
+       
 
         // GET: api/cars/myFavorites
         [HttpGet("{bookId}")]
@@ -36,37 +36,59 @@ namespace BookNookBackend.Controllers
         {
             try
             {
+
+
                 //var result = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new BookDetailsDto
                 //{
 
 
                 //}).FirstOrDefault();
 
+
+                // THIS MEHTOD DOES NOT WORK!!!
+
                 // Get all the Reviews
-                var reviews = _context.Reviews.Where(r => r.BookId == bookId).ToList();
+                //var reviews = _context.Reviews.Where(r => r.BookId == bookId).ToList();
 
-                // Construct Book Details DTO
-                var bookDetails = new BookDetailsDto
+                //// Construct Book Details DTO
+                //var bookDetails = new BookDetailsDto
+                //{
+                //    Reviews = reviews.Select(r => new ReviewWithUserDto
+                //    {
+                //        Id = r.Id,
+                //        BookId = r.BookId,
+                //        Text = r.Text,
+                //        Rating = r.Rating,
+                //        User = new UserForDisplayDto
+                //        {
+                //            Id = r.User.Id,
+                //            FirstName = r.User.FirstName,
+                //            LastName = r.User.LastName,
+                //            UserName = r.User.UserName,
+                //        }
+
+                //    }).ToList(),
+                //    AverageRating = 0,
+                //    IsFavorited = true
+                //};
+                //return Ok(bookDetails);
+
+                // this is our code
+                var reviews = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new ReviewWithUserDto
                 {
-                    Reviews = reviews.Select(r => new ReviewWithUserDto
+                    Id = r.Id,
+                    BookId = r.BookId,
+                    Text = r.Text,
+                    User = new UserForDisplayDto
                     {
-                        Id = r.Id,
-                        BookId = r.BookId,
-                        Text = r.Text,
-                        Rating = r.Rating,
-                        User = new UserForDisplayDto
-                        {
-                            Id = r.User.Id,
-                            FirstName = r.User.FirstName,
-                            LastName = r.User.LastName,
-                            UserName = r.User.UserName,
-                        }
+                        Id = r.User.Id,
+                        FirstName = r.User.FirstName,
+                        LastName = r.User.LastName,
+                        UserName = r.User.UserName,
+                    }
+                }).ToList();
 
-                    }).ToList(),
-                    AverageRating = 0,
-                    IsFavorited = true
-                };
-                return Ok(bookDetails);
+                return Ok(reviews);
             }
             catch (Exception ex)
             {

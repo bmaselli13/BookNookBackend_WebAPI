@@ -5,6 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using FullStackAuth_WebAPI.Data;
+using FullStackAuth_WebAPI.Models;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -70,6 +71,37 @@ namespace BookNookBackend.Controllers
                 _context.SaveChanges();
 
                 return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
+        // something is off in here or in postman
+        [HttpPut("{id}"), Authorize]
+        public IActionResult Put(int id, [FromBody] Review review)
+        {
+            try
+            {
+                Review existReview = _context.Reviews.Include(o => o.User).FirstOrDefault(f => f.Id == id);
+                if (existReview is null)
+                    return NotFound();
+
+                var userId = User.FindFirstValue("id");
+                if (string.IsNullOrEmpty(userId) || review.UserId != userId)
+                    return Unauthorized();
+
+                // I don't know if it make sence to add Book Id and User Id in here because if it's the wrong book than we just should delete it???
+                existReview.Text = review.Text;
+                existReview.Rating = review.Rating;
+
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                return StatusCode(201, existReview);
+                
             }
             catch (Exception ex)
             {

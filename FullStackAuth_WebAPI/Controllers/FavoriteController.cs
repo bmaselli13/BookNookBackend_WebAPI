@@ -66,15 +66,31 @@ namespace BookNookBackend.Controllers
             }
         }
 
+
+        // doesn't work probably we need to remove from user that its his favorite not just delete vaforite
         //[HttpDelete("{favoriteid}"), Authorize]
         //public IActionResult Deletefavorite(int favoriteid)
         //{
-        //    var review = _context.Reviews.FirstOrDefault(r => r.Id == favoriteid);
-        //    if (review is null)
-        //        return NotFound();
+        //    try
+        //    {
+        //        var review = _context.Reviews.FirstOrDefault(r => r.Id == favoriteid);
+        //        if (review is null)
+        //            return NotFound();
 
-        //    var userId = User.FindFirstValue("id");
+        //        var userId = User.FindFirstValue("id");
+        //        if (string.IsNullOrEmpty(userId) || review.UserId != userId)
+        //            return Unauthorized();
+
+        //        _context.Reviews.Remove(review);
+        //        _context.SaveChanges();
+
+        //        return StatusCode(204);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, ex.Message);
+        //    }
         //}
-        
+
     }
 }

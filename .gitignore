@@ -399,8 +399,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Specific file to ignore
-<<<<<<< HEAD
-FullStackAuth_WebAPI/appsettings.json
-=======
-FullStackAuth_WebAPI/appsettings.json
->>>>>>> 8000e571d232aad194d7324aadd5c683937bc093
+appsettings.json

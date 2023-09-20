@@ -7,6 +7,7 @@ using FullStackAuth_WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System.Drawing.Text;
 using System.Linq.Expressions;
@@ -36,19 +37,13 @@ namespace BookNookBackend.Controllers
         {
             try
             {
-
-
                 //var result = _context.Reviews.Where(r => r.BookId == bookId).Select(r => new BookDetailsDto
                 //{
 
-
                 //}).FirstOrDefault();
 
-
-                // THIS MEHTOD DOES NOT WORK!!!
-
-               // Get all the Reviews
-                var reviews = _context.Reviews.Where(r => r.BookId == bookId).ToList();
+                // Get all the Reviews
+                var reviews = _context.Reviews.Include(r => r.User).Where(r => r.BookId == bookId).ToList();
 
                 // Construct Book Details DTO
                 var bookDetails = new BookDetailsDto
@@ -71,8 +66,8 @@ namespace BookNookBackend.Controllers
                     AverageRating = 0,
                     IsFavorited = true
                 };
-                return Ok(bookDetails);
 
+                return Ok(bookDetails);
             }
             catch (Exception ex)
             {

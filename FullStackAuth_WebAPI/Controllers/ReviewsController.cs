@@ -6,6 +6,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using FullStackAuth_WebAPI.Data;
 using FullStackAuth_WebAPI.Models;
+using BookNookBackend.DataTransferObjects;
+using FullStackAuth_WebAPI.DataTransferObjects;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -100,7 +102,33 @@ namespace BookNookBackend.Controllers
 
                 _context.SaveChanges();
 
-                return StatusCode(201, existReview);
+                var userDto = new UserForDisplayDto
+                {
+                    Id = existReview.User.Id,
+                    FirstName = existReview.User.FirstName,
+                    LastName = existReview.User.LastName,
+                    UserName = existReview.User.UserName
+                };
+
+                var existringReviewDto = new ReviewWithUserDto
+                {
+                    Id = existReview.Id,
+                    BookId = existReview.BookId,
+                    Text = existReview.Text,
+                    Rating = existReview.Rating,
+                    User = userDto
+                    // at first i wanted to create with one but i had an  erro so u pull this outside...userDto... 
+                    //User = 
+                    //{
+                    //   Id = existReview.User.Id,
+                    //   FirstName = existReview.User.FirstName,
+                    //   LastName = existReview.User.LastName,
+                    //   UserName = existReview.User.UserName
+                    //},
+
+                };
+
+                return StatusCode(201, existringReviewDto);
                 
             }
             catch (Exception ex)

@@ -275,7 +275,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImpvaG5zbWl0aCIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJpZCI6ImFmMGQ2OTZjLWNlYzctNGQ3Mi1hNTljLThmODVkZDkxZjJkMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyMTcwODIsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.9-71KPOfaxe7PH4Ddw3JlV7mNsg3Tq3kusNJPTV-VGE",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUzMjIyNTQsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.ZduluzZUQ-NvBOf4CWneX3F1RTegAN9CZkPiYWiBejg",
 								"type": "text"
 							}
 						],
@@ -401,13 +401,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImJvYmxhbmlzdGVyIiwiZW1haWwiOiJib2JAZ21haWwuY29tIiwiaWQiOiI5OGU0ODY1MC02YzBjLTRmZDUtOWUxNy1mMjQ0YjkyYTYyOGIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjk1MjE2ODUwLCJpc3MiOiJGdWxsU3RhY2tBdXRoX1dlYkFQSSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.5WiwimkRg5CNx5fTx_hsE6ruWkWk2hlNTzPL1GoEB-k",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUzMjIyNTQsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.ZduluzZUQ-NvBOf4CWneX3F1RTegAN9CZkPiYWiBejg",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bookId\": \"LznfzAEACAAJ\",\r\n    \"text\": \"The book is waste of time could be way shorter\",\r\n    \"rating\": 2\r\n}",
+							"raw": "{\r\n    \"bookId\": \"l3tSzQEACAAJ\",\r\n    \"text\": \"The worst book in the entire world update please\",\r\n    \"rating\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -415,7 +415,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/Reviews/",
+							"raw": "https://localhost:5001/api/Reviews",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -423,8 +423,7 @@
 							"port": "5001",
 							"path": [
 								"api",
-								"Reviews",
-								""
+								"Reviews"
 							]
 						}
 					},
@@ -471,13 +470,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUyNjQ4NTcsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.DUVW962igm51YkbNkbV_4c4q78di4QUqdbBtq7zWcSM",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im5pa29iZXIiLCJlbWFpbCI6Im5pa0BnbWFpbC5jb20iLCJpZCI6ImVhMTAxZDg4LTc5ZDMtNDIzMC04NjAyLTc0NTNjYmUyZTEwNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2OTUzMjIyNTQsImlzcyI6IkZ1bGxTdGFja0F1dGhfV2ViQVBJIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.ZduluzZUQ-NvBOf4CWneX3F1RTegAN9CZkPiYWiBejg",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bookId\": \"LznfzAEACAAJ\",\r\n    \"text\": \"Updated My favorite Book\",\r\n    \"rating\": 4\r\n}\r\n\r\n// could bot finish because said i need to pass in at 11-00 am",
+							"raw": "{\r\n  \"text\": \"Updated Review. The book seems bad at first but by the end it becomes more interesting\",\r\n  \"rating\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -485,7 +484,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/Reviews/3",
+							"raw": "https://localhost:5001/api/Reviews/9",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -494,7 +493,7 @@
 							"path": [
 								"api",
 								"Reviews",
-								"3"
+								"9"
 							]
 						}
 					},

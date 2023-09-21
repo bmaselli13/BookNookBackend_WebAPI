@@ -35,6 +35,21 @@ namespace BookNookBackend.Controllers
         {
             try
             {
+                // This is for isfavorited . I think it would be written with ternarry operator but it is what it is.
+
+                bool isFavoriteResultBool = false;
+                var userId = User.FindFirstValue("id");
+
+                if (string.IsNullOrEmpty(userId))
+                    return Unauthorized();
+
+                var isFavoriteResult = _context.Favorites.Where(f => f.UserId == userId);
+                if (isFavoriteResult != null)
+                {
+                    isFavoriteResultBool = true;
+                }
+
+                // This is for reviews
                 var reviews = _context.Reviews.Include(r => r.User).Where(r => r.BookId == bookId).ToList();
 
                 var bookDetails = new BookDetailsDto
@@ -54,8 +69,8 @@ namespace BookNookBackend.Controllers
                         }
 
                     }).ToList(),
-                    AverageRating = 0,
-                    IsFavorited = true
+                    AverageRating = _context.Reviews.Where(b=>b.BookId == bookId).Average(r=>r.Rating),
+                    IsFavorited = isFavoriteResultBool
                 };
 
                 return Ok(bookDetails);
